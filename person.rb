@@ -1,4 +1,4 @@
-require './nameable'
+require './decorator'
 
 class Person < Nameable
   attr_reader :id
@@ -9,12 +9,13 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    super()
   end
 
    def correct_name
     @name
   end
-  
+
   def of_age?
     @age >= 18
   end
