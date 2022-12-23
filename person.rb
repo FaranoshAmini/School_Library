@@ -12,7 +12,7 @@ class Person < Nameable
     super()
   end
 
-   def correct_name
+  def correct_name
     @name
   end
 
