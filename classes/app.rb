@@ -133,6 +133,7 @@ class APP
       puts 'Rental Successfully Created'
     end
     back_to_menu
+  end
 
   def list_rentals
     puts 'Select id of any person'
@@ -160,3 +161,4 @@ class APP
     gets.chomp
     puts ''
   end
+end
