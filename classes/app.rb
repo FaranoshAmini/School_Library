@@ -87,24 +87,25 @@ class APP
     age = gets.chomp
     print 'Insert name: '
     name = gets.chomp
-    if person == '1'
-      student = Student.new(age, name)
-      @people.push(student)
-    end
-    if person == '2'
+    person_condition(person, age, name)
+    puts 'Person Created Successfully'
+    back_to_menu
+  end
+
+  def person_condition(person, age, name)
+    case person
+    when '1'
+      print 'Has parents permission [Y/N]: '
+      permit = gets.chomp.downcase
+      parent_permission = permit != 'n'
+      @people.push(Student.new(age, parent_permission, name))
+    when '2'
       print 'Insert specialization: '
       specialization = gets.chomp
       teacher = Teacher.new(specialization, age, name)
       @people.push(teacher)
     end
-    puts 'Person Created Successfully'
-    back_to_menu
   end
-
-  # def validate_person(person)
-  #   puts 'Enter digit between 1 & 2' unless person != '1' || person != '1'
-  #   create_person
-  # end
 
   def list_people
     puts 'No person available' if @people.length.zero?
@@ -136,7 +137,13 @@ class APP
   end
 
   def list_rentals
-    @rentals.each { |i| puts "Date: #{i.date} Person: #{i.person} Book: #{i.book}" }
+     puts 'Select id of any person'
+    @people.each { |i| puts "id: #{i.id}, Person: #{i.name}" }
+    print 'Person id: '
+    person_id = gets.chomp
+    @rentals.each do |i|
+      puts "Date: #{i.date}, Book: '#{i.book.title}' by #{i.book.author}" if i.person.id.to_i == person_id.to_i
+    end
   end
 
   def convert_date(str)

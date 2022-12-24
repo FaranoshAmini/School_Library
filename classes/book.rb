@@ -14,4 +14,5 @@ class Book
     Rental.new(self, person, date)
     Rentals.new(self, person, date)
   end
+  
 end
