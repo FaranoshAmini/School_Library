@@ -50,8 +50,10 @@ class APP
       create_person
     when '4'
       create_book
-    when
+    when '5'
       create_rental
+    when '6'
+      list_rentals
     else
       'Enter digit from 1 to 7'
     end
@@ -118,18 +120,17 @@ class APP
     else
       puts 'Select a book from the following list by number'
       @books.each_with_index { |book, index| puts "#{index}) Book Title: #{book.title}, Author: #{book.author}" }
-      rental_book = gets.chomp
+      rental_book = gets.chomp.to_1
       puts 'Select a person from the following list by number (not id)'
       @people.each_with_index do |person, index|
         puts "#{index}) Name: #{person.name} Age: #{person.age} Id: #{person.id}"
       end
-      rental_person = gets.chomp
+      rental_person = gets.chomp.to_1
       puts 'Enter date'
       date = convert_date(gets)
-      rental_detail = Rental.new('hammas', 'avengers', date)
-      @rental.push(rental_detail)
+      rental_detail = Rental.new(@people[rental_person], @books[rental_book], date)
+      @rentals.push(rental_detail)
       puts 'Rental Successfully Created'
-      rental_detail
     end
     back_to_menu
   end
@@ -141,7 +142,7 @@ class APP
   def convert_date(str)
     Date.parse(str)
   end
-  
+
   def select_option
     puts ''
     print 'Select option'
