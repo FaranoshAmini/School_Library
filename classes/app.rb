@@ -160,4 +160,3 @@ class APP
     gets.chomp
     puts ''
   end
-end
