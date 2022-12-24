@@ -13,11 +13,10 @@ class APP
     @books = []
   end
 
-
   def console_entry_point
-        puts ''
-    puts 'Welcome to my School Library App'
-    until list_options
+    puts ''
+      puts 'Welcome to my School Library App'
+      until list_options
       input = gets.chomp
       if input == '7'
         puts 'Thanks for using School Library App (^_^)'
@@ -36,7 +35,7 @@ class APP
     puts '5 - Create a rental'
     puts '6 - List all rentals of given person id'
     puts '7 - Quit'
-     puts('-------------------------')
+    puts('-------------------------')
     print 'Enter number of the operation: '
   end
 
@@ -109,11 +108,11 @@ class APP
 
   def list_people
     puts 'No person available' if @people.length.zero?
-   @people.each { |person| puts "Name: #{person.name} Age: #{person.age}" }
+    @people.each { |person| puts "Name: #{person.name} Age: #{person.age}" }
     back_to_menu
   end
 
-   def create_rental
+  def create_rental
     if @books.size.zero?
       puts 'No Books Available'
     elsif @people.size.zero?
@@ -134,15 +133,14 @@ class APP
       puts 'Rental Successfully Created'
     end
     back_to_menu
-  end
 
   def list_rentals
-     puts 'Select id of any person'
-    @people.each { |i| puts "id: #{i.id}, Person: #{i.name}" }
-    print 'Person id: '
-    person_id = gets.chomp
-    @rentals.each do |i|
-      puts "Date: #{i.date}, Book: '#{i.book.title}' by #{i.book.author}" if i.person.id.to_i == person_id.to_i
+    puts 'Select id of any person'
+      @people.each { |i| puts "id: #{i.id}, Person: #{i.name}" }
+      print 'Person id: '
+      person_id = gets.chomp
+      @rentals.each do |i|
+    puts "Date: #{i.date}, Book: '#{i.book.title}' by #{i.book.author}" if i.person.id.to_i == person_id.to_i
     end
   end
 
