@@ -15,7 +15,7 @@ module AppRentals
       rental_book = gets.chomp.to_i
       puts 'Select a person from the following list by number (not id)'
       people.each_with_index do |person, index|
-        puts "#{index}) #{[person.type]} Name: #{person.name} Age: #{person.age} Id: #{person.id}"
+        puts "#{index}) #{[person.class]} Name: #{person.name} Age: #{person.age} Id: #{person.id}"
       end
       rental_person = gets.chomp.to_i
       puts 'Enter date'
@@ -29,7 +29,7 @@ module AppRentals
 
   def list_rentals(rentals, people)
     puts 'Select id of any person'
-    people.each { |i| puts "[#{i.type.to_i}] id: #{i.id}, Person: #{i.name}" }
+    people.each { |i| puts "[#{i.class}] id: #{i.id}, Person: #{i.name}" }
     print 'Person id: '
     person_id = gets.chomp
     rentals.each do |i|

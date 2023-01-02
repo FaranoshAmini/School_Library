@@ -34,7 +34,7 @@ module AppPeople
 
   def list_people(people)
     puts 'No person available' if people.empty?
-    people.each { |person| puts "[#{person.type}] Name: #{person.name} Age: #{person.age}" }
+    people.each { |person| puts "[#{person.class}] Name: #{person.name} Age: #{person.age}" }
     back_to_menu
   end
 end

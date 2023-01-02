@@ -42,13 +42,13 @@ class Main
     puts 'Welcome to my School Library App'
     until list_options
       input = gets.chomp
-      if input == '7'
-        puts 'Thanks for using School Library App (^_^)'
-        break
-      end
+      next unless input == '7'
+
+      puts 'Thanks for using School Library App (^_^)'
+      breaktype
       option input
     end
   end
-end
 
-Main.new.console_entry_point
+  Main.new.console_entry_point
+end
