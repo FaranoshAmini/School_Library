@@ -5,9 +5,9 @@ require_relative 'ui_formating'
 module AppRentals
   include UiFormat
   def create_rental(rentals, people, books)
-    if books.size.zero?
+    if books.empty?
       puts 'No Books Available'
-    elsif people.size.zero?
+    elsif people.empty?
       puts 'No Person Available'
     else
       puts 'Select a book from the following list by number'

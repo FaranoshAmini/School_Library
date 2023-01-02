@@ -33,7 +33,7 @@ module AppPeople
   end
 
   def list_people(people)
-    puts 'No person available' if people.length.zero?
+    puts 'No person available' if people.empty?
     people.each { |person| puts "[#{person.type}] Name: #{person.name} Age: #{person.age}" }
     back_to_menu
   end
