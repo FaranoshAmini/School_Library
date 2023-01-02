@@ -78,7 +78,7 @@ Run this from the root folder at the command prompt.
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors"></a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Faranosh Amini**
 
@@ -86,6 +86,11 @@ Run this from the root folder at the command prompt.
 - Twitter: [@twitterhandle](https://twitter.com/Faranosh_Amini)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/faranosh-amini-9b925b23a/)
 
+👤 **Nahnah Ahjuwah**
+
+- GitHub: [@NahnahAJ](https://github.com/NahnahAJ)
+- Twitter: [@NahnahAhjuwah](https://https://twitter.com/NahnahAhjuwah)
+- LinkedIn: [Felicia-Awuah](https://www.linkedin.com/in/felicia-awuah-gyedua/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
